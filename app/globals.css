@@ -1,0 +1,215 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --font-inter: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-space: "Space Grotesk", Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-jetbrains: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --background: #f6f3ea;
+  --panel: #fffdf7;
+  --panel-soft: rgba(255, 253, 247, 0.9);
+  --border: rgba(20, 20, 20, 0.16);
+  --text: #111111;
+  --muted: #3f3f46;
+  --quiet: #71717a;
+  --nothing-red: #ff2e2e;
+  --success: #111111;
+  --wrong: #ff2e2e;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #050505;
+  --panel: #0d0d0d;
+  --panel-soft: rgba(15, 15, 15, 0.86);
+  --border: rgba(255, 255, 255, 0.16);
+  --text: #ffffff;
+  --muted: #d8d8d8;
+  --quiet: #737373;
+  --success: #f5f5f5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    linear-gradient(rgba(17, 17, 17, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 17, 17, 0.055) 1px, transparent 1px),
+    radial-gradient(circle at 18% 12%, rgba(255, 46, 46, 0.08), transparent 26%),
+    linear-gradient(180deg, #f6f3ea 0%, #fffdf7 52%, #ede8dc 100%);
+  background-size: 28px 28px, 28px 28px, auto, auto;
+  color: var(--text);
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+.dark body {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 18% 12%, rgba(255, 46, 46, 0.12), transparent 26%),
+    linear-gradient(180deg, #050505 0%, #0a0a0a 52%, #030303 100%);
+  background-size: 28px 28px, 28px 28px, auto, auto;
+}
+
+button,
+a,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@layer components {
+  .glass {
+    border: 1px solid var(--border);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.52)),
+      #fffdf7;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 24px 60px rgba(48, 42, 32, 0.12);
+    backdrop-filter: blur(16px);
+  }
+
+  .hairline {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #111111 0%, #3f3f46 58%, #ff2e2e 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .neon-border {
+    position: relative;
+    isolation: isolate;
+    border: 1px solid rgba(17, 17, 17, 0.72);
+  }
+
+  .neon-border::before {
+    content: "";
+    position: absolute;
+    inset: auto auto 8px 8px;
+    width: 22px;
+    height: 22px;
+    z-index: -1;
+    border-radius: 999px;
+    background: #ff2e2e;
+    opacity: 0.95;
+    box-shadow: 0 0 28px rgba(255, 46, 46, 0.55);
+  }
+
+  .focus-ring {
+    outline: 2px solid transparent;
+    outline-offset: 3px;
+  }
+
+  .focus-ring:focus-visible {
+    outline-color: rgba(255, 46, 46, 0.95);
+  }
+
+  .nothing-panel {
+    border: 1px solid rgba(17, 17, 17, 0.16);
+    background:
+      radial-gradient(circle at 1px 1px, rgba(17, 17, 17, 0.12) 1px, transparent 0),
+      rgba(255, 253, 247, 0.94);
+    background-size: 16px 16px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.92), 0 24px 70px rgba(48, 42, 32, 0.13);
+  }
+
+  .dot-title {
+    font-family: var(--font-jetbrains), monospace;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  .nothing-chip {
+    border: 1px solid rgba(17, 17, 17, 0.18);
+    background: rgba(255, 255, 255, 0.72);
+    color: #18181b;
+  }
+}
+
+.dark .glass {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.025)),
+    #080808;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 28px 90px rgba(0, 0, 0, 0.45);
+}
+
+.dark .gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #e8e8e8 58%, #ff4a4a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.dark .neon-border {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.dark .nothing-panel {
+  border-color: rgba(255, 255, 255, 0.16);
+  background:
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.12) 1px, transparent 0),
+    rgba(8, 8, 8, 0.92);
+  background-size: 16px 16px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 26px 90px rgba(0, 0, 0, 0.5);
+}
+
+.dark .nothing-chip {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.045);
+  color: #e8e8e8;
+}
+
+.light .app-theme .text-white,
+.light .app-theme .text-gray-100,
+.light .app-theme .text-gray-200,
+.light .app-theme .text-gray-300 {
+  color: #111111;
+}
+
+.light .app-theme .text-gray-400,
+.light .app-theme .text-gray-500 {
+  color: #5f5f66;
+}
+
+.light .app-theme [class*="bg-black"] {
+  background-color: rgba(255, 253, 247, 0.86);
+}
+
+.light .app-theme [class*="bg-white"] {
+  background-color: rgba(17, 17, 17, 0.045);
+}
+
+.light .app-theme [class*="border-white"] {
+  border-color: rgba(17, 17, 17, 0.16);
+}
+
+.light .app-theme header,
+.light .app-theme nav {
+  background-color: rgba(255, 253, 247, 0.88);
+}
+
+.light .shadow-glow {
+  box-shadow: 0 0 0 1px rgba(17, 17, 17, 0.12), 0 12px 32px rgba(255, 46, 46, 0.13);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

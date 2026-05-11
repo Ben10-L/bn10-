@@ -1,0 +1,17 @@
+{
+  "name": "Bn10",
+  "short_name": "Bn10",
+  "description": "AI-powered quiz platform for Machine Learning and Neural Networks revision.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1020",
+  "theme_color": "#0B1020",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
