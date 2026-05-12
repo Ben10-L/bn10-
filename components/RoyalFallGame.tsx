@@ -385,34 +385,7 @@ export function RoyalFallGame() {
           </div>
         </div>
 
-        <aside className="space-y-4">
-          <div className="nothing-panel rounded-[1.25rem] p-5">
-            <p className="dot-title text-xs text-red-400">Royal Fall</p>
-            <h2 className="dot-title mt-2 text-3xl font-semibold text-white">Dark Kingdom Protocol</h2>
-            <p className="mt-3 text-sm leading-6 text-gray-400">
-              Jump gaps, dash through fog, collect red relic orbs, and survive the faster collapse.
-            </p>
-            <div className="mt-5 grid gap-3">
-              {statusCards.map((card) => {
-                const Icon = card.icon;
-                return (
-                  <div key={card.label} className="rounded-xl border border-white/10 bg-black/25 p-3">
-                    <div className="flex items-center justify-between gap-3">
-                      <div>
-                        <p className="text-xs uppercase text-gray-500">{card.label}</p>
-                        <p className="mt-1 font-mono text-lg text-white">{card.value}</p>
-                      </div>
-                      <Icon className="text-red-300" size={19} />
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-  
-
-        </aside>
+    
       </div>
     </section>
   );
