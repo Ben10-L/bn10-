@@ -69,7 +69,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
       <main className="relative z-10 pt-16">{children}</main>
 
-      <nav className="fixed bottom-3 left-3 right-3 z-50 grid grid-cols-3 rounded-[1.4rem] border border-white/15 bg-black/90 p-2 shadow-2xl backdrop-blur-xl md:hidden">
+      <nav className="fixed bottom-3 left-3 right-3 z-50 grid grid-cols-4 rounded-[1.4rem] border border-white/15 bg-black/90 p-2 shadow-2xl backdrop-blur-xl md:hidden">
         {navItems.map((item) => {
           const Icon = item.icon;
           const active = pathname === item.href;
@@ -86,6 +86,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             </Link>
           );
         })}
+        <ThemeToggle variant="mobileTab" />
       </nav>
     </div>
   );
