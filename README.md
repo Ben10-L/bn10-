@@ -1,6 +1,6 @@
-# Bn10 Quiz
+# Bn10
 
-Bn10 Quiz is a Next.js quiz platform for revising Machine Learning and Neural Networks topics. It turns extracted PDF/QCM material into interactive quizzes with timed sessions, progress tracking, final scoring, and full answer correction.
+Bn10 is a Next.js quiz platform for revising Machine Learning and Neural Networks topics. It turns extracted PDF/QCM material into interactive quizzes with timed sessions, progress tracking, final scoring, and full answer correction.
 
 ## Features
 
