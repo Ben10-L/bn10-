@@ -203,6 +203,55 @@ input {
   box-shadow: 0 0 0 1px rgba(17, 17, 17, 0.12), 0 12px 32px rgba(255, 46, 46, 0.13);
 }
 
+.light .app-theme .royal-fall-theme,
+.light .app-theme .royal-fall-theme .text-white,
+.light .app-theme .royal-fall-theme .text-gray-100,
+.light .app-theme .royal-fall-theme .text-gray-200,
+.light .app-theme .royal-fall-theme .text-gray-300 {
+  color: #f7f7f7;
+}
+
+.light .app-theme .royal-fall-theme {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 18% 12%, rgba(255, 46, 46, 0.12), transparent 26%),
+    linear-gradient(180deg, #050505 0%, #0a0a0a 52%, #030303 100%);
+  background-size: 28px 28px, 28px 28px, auto, auto;
+}
+
+.light .app-theme .royal-fall-theme .text-gray-400,
+.light .app-theme .royal-fall-theme .text-gray-500 {
+  color: #a1a1aa;
+}
+
+.light .app-theme .royal-fall-theme .nothing-panel {
+  border-color: rgba(255, 255, 255, 0.16);
+  background:
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.12) 1px, transparent 0),
+    rgba(8, 8, 8, 0.92);
+  background-size: 16px 16px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 26px 90px rgba(0, 0, 0, 0.5);
+}
+
+.light .app-theme .royal-fall-theme .nothing-chip {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.045);
+  color: #e8e8e8;
+}
+
+.light .app-theme .royal-fall-theme [class*="bg-black"] {
+  background-color: rgba(0, 0, 0, 0.72);
+}
+
+.light .app-theme .royal-fall-theme [class*="bg-white"] {
+  background-color: rgba(255, 255, 255, 0.055);
+}
+
+.light .app-theme .royal-fall-theme [class*="border-white"] {
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
