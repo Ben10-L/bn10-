@@ -3,13 +3,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { BrainCircuit, Home, Search } from "lucide-react";
+import { BrainCircuit, Crown, Home, Search } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navItems = [
   { href: "/", label: "Accueil", icon: Home },
   { href: "/quiz/ml-random", label: "Quiz ML", icon: BrainCircuit },
-  { href: "/quiz/rn-random", label: "Quiz RN", icon: BrainCircuit }
+  { href: "/quiz/rn-random", label: "Quiz RN", icon: BrainCircuit },
+  { href: "/royal-fall", label: "Royal Fall", icon: Crown }
 ];
 
 export function AppShell({ children }: { children: React.ReactNode }) {
@@ -69,7 +70,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
       <main className="relative z-10 pt-16">{children}</main>
 
-      <nav className="fixed bottom-3 left-3 right-3 z-50 grid grid-cols-4 rounded-[1.4rem] border border-white/15 bg-black/90 p-2 shadow-2xl backdrop-blur-xl md:hidden">
+      <nav className="fixed bottom-3 left-3 right-3 z-50 grid grid-cols-5 rounded-[1.4rem] border border-white/15 bg-black/90 p-2 shadow-2xl backdrop-blur-xl md:hidden">
         {navItems.map((item) => {
           const Icon = item.icon;
           const active = pathname === item.href;
