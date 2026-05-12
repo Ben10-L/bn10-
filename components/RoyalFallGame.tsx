@@ -2,8 +2,8 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
-import { Crown, Gauge, Home, Pause, Play, RotateCcw, Shield, Sparkles, Trophy, Volume2, Zap } from "lucide-react";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { Crown, Home, Pause, Play, RotateCcw } from "lucide-react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 type GamePhase = "menu" | "playing" | "paused" | "over";
 type ObstacleKind = "spike" | "enemy" | "laser" | "wall";
@@ -278,20 +278,11 @@ export function RoyalFallGame() {
     };
   }, [endRun, playTone]);
 
-  const statusCards = useMemo(
-    () => [
-      { label: "Daily challenge", value: "Gate VII", icon: Gauge },
-      { label: "Relics target", value: "25 orbs", icon: Sparkles },
-      { label: "Local best", value: bestScore.toLocaleString(), icon: Trophy }
-    ],
-    [bestScore]
-  );
-
   return (
-    <section className="royal-fall-theme min-h-[calc(100vh-4rem)] pb-24 lg:pb-10">
-      <div className="mx-auto grid max-w-7xl gap-5 px-4 py-6 sm:px-6 lg:grid-cols-[1fr_19rem] lg:px-8">
-        <div className="nothing-panel relative overflow-hidden rounded-[1.35rem] p-3 sm:p-4">
-          <div ref={wrapperRef} className="relative h-[68vh] min-h-[520px] overflow-hidden rounded-[1rem] border border-white/15 bg-black shadow-2xl">
+    <section className="royal-fall-theme h-[calc(100dvh-4rem)] min-h-[520px] bg-[#030303] p-2 pb-24 sm:p-4 md:pb-4">
+      <div className="h-full w-full">
+        <div className="nothing-panel relative h-full overflow-hidden rounded-[1.35rem] p-2 sm:p-3">
+          <div ref={wrapperRef} className="relative h-full min-h-0 overflow-hidden rounded-[1rem] border border-white/15 bg-black shadow-2xl">
             <canvas ref={canvasRef} className="absolute inset-0 h-full w-full touch-none" />
 
             <div className="pointer-events-none absolute inset-x-0 top-0 z-10 flex items-start justify-between gap-3 p-3 sm:p-5">
