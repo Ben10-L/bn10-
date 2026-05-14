@@ -37,7 +37,7 @@ export function HomeExperience() {
         <div className="animate-reveal">
           <div className="nothing-chip mb-5 inline-flex items-center gap-2 rounded-full px-3 py-2 text-sm">
             <Sparkles size={16} />
-            Quiz PDF / ordre original
+            Modesty brings nothing but good
           </div>
           <h1 className="dot-title max-w-4xl text-5xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl">
             Révision Machine Learning & Réseaux de Neurones
