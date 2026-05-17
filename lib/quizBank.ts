@@ -2760,7 +2760,7 @@ export const quizSections = [
           },
           {
             "number": 5,
-            "prompt": "Quelle est la fonction d’activation utilisée dans un perceptron clas- sique?",
+            "prompt": "Quelle est la fonction d’activation utilisée dans un perceptron classique?",
             "choices": [
               "Sigmoïde",
               "ReLU",
@@ -3263,7 +3263,7 @@ export const quizSections = [
               "Fonction d’activation",
               "Fonction de perte",
               "Fonction de coût",
-              "b et c"
+              "2 et 3"
             ],
             "answer": 3,
             "explanation": "Réponse correcte: b et c"
@@ -3277,8 +3277,8 @@ export const quizSections = [
               "O(e)",
               "O(1)"
             ],
-            "answer": 2,
-            "explanation": "Réponse correcte: O(e)"
+            "answer": 1,
+            "explanation": "Réponse correcte: O(n²)"
           },
           {
             "number": 8,
@@ -3660,7 +3660,7 @@ export const quizSections = [
           },
           {
             "number": 3,
-            "prompt": "Quelle est la principale limitation du perceptron selon Minsky et Pa- pert?",
+            "prompt": "Quelle est la principale limitation du perceptron selon Minsky et Papert?",
             "choices": [
               "Il ne peut pas apprendre",
               "Il ne peut pas résoudre les problèmes non linéairement séparables",
@@ -3744,7 +3744,7 @@ export const quizSections = [
           },
           {
             "number": 10,
-            "prompt": "Quelle est la fonction d’activation utilisée dans un perceptron clas- sique?",
+            "prompt": "Quelle est la fonction d’activation utilisée dans un perceptron classique?",
             "choices": [
               "ReLU",
               "Sigmoïde",
