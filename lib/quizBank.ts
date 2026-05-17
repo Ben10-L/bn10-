@@ -3165,7 +3165,7 @@ export const quizSections = [
           },
           {
             "number": 19,
-            "prompt": "Pourquoi l9utilisation de GPU est-elle courante pour l'entraînement des réseaux de neurones?",
+            "prompt": "Pourquoi l'utilisation de GPU est-elle courante pour l'entraînement des réseaux de neurones?",
             "choices": [
               "Ils consomment moins d'énergie",
               "Ils permettent des calculs massivement parallèles",
