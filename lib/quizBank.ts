@@ -3045,7 +3045,7 @@ export const quizSections = [
           },
           {
             "number": 9,
-            "prompt": "L9explosion du gradient est un problème qui se produit:",
+            "prompt": "L'explosion du gradient est un problème qui se produit:",
             "choices": [
               "Lorsque les gradients deviennent très grands",
               "Lorsque les gradients deviennent très petits",
