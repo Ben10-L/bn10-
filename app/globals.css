@@ -136,6 +136,20 @@ input {
     background: rgba(255, 255, 255, 0.72);
     color: #18181b;
   }
+
+  .quiz-results-button {
+    border: 1px solid rgba(255, 100, 100, 0.72);
+    background:
+      radial-gradient(circle at 12px 12px, rgba(255, 255, 255, 0.24), transparent 18px),
+      linear-gradient(135deg, rgba(255, 46, 46, 0.96), rgba(120, 0, 0, 0.92));
+    color: #ffffff;
+    box-shadow: 0 0 0 1px rgba(255, 46, 46, 0.18), 0 18px 48px rgba(255, 46, 46, 0.32);
+  }
+
+  .quiz-results-button:hover {
+    border-color: rgba(255, 190, 190, 0.92);
+    box-shadow: 0 0 0 1px rgba(255, 46, 46, 0.26), 0 22px 60px rgba(255, 46, 46, 0.42);
+  }
 }
 
 .dark .glass {
@@ -201,6 +215,15 @@ input {
 
 .light .shadow-glow {
   box-shadow: 0 0 0 1px rgba(17, 17, 17, 0.12), 0 12px 32px rgba(255, 46, 46, 0.13);
+}
+
+.light .app-theme .quiz-results-button {
+  border-color: rgba(180, 0, 0, 0.7);
+  background:
+    radial-gradient(circle at 12px 12px, rgba(255, 255, 255, 0.34), transparent 18px),
+    linear-gradient(135deg, #ff2e2e, #7a0000);
+  color: #ffffff;
+  box-shadow: 0 0 0 1px rgba(180, 0, 0, 0.2), 0 18px 48px rgba(255, 46, 46, 0.34);
 }
 
 .light .app-theme .royal-fall-theme,
