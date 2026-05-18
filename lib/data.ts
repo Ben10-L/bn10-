@@ -220,5 +220,19 @@ export const quizSets: QuizSet[] = [
     weakSignals: ["Rosenblatt", "Hopfield", "Deep Learning"],
     accent: "from-signal-amber to-signal-blue",
     icon: "brain"
+  },
+  {
+    slug: "revision-finale",
+    title: sourceQuiz("revision-finale").title,
+    source: sourceQuiz("revision-finale").source,
+    section: "RN quiz",
+    topic: sourceQuiz("revision-finale").topic,
+    questions: sourceQuiz("revision-finale").questions.length,
+    bankQuestions: sourceQuiz("revision-finale").questions,
+    duration: 80,
+    accuracy: 0,
+    weakSignals: ["Revision finale", "Deep Learning", "RN"],
+    accent: "from-signal-coral to-signal-cyan",
+    icon: "network"
   }
 ];
