@@ -47,6 +47,15 @@ const sources = [
     parser: "marked"
   },
   {
+    slug: "revision-ml",
+    section: "ML quiz",
+    title: "Révision Machine Learning",
+    topic: "Machine Learning",
+    source: "/Users/macbook/Downloads/revision-ml.pdf",
+    text: "extracted-text/ml-revision.txt",
+    parser: "answers"
+  },
+  {
     slug: "perceptron",
     section: "RN quiz",
     title: "QCM: Le Perceptron",
@@ -89,6 +98,15 @@ const sources = [
     topic: "Réseaux de Neurones",
     source: "/Users/macbook/Desktop/master/S1/S1/Reseaux de Reuronnes/quiz/Hestorique de réseux de neuron.pdf",
     text: "extracted-text/rn-historique.txt",
+    parser: "answers"
+  },
+  {
+    slug: "revision-finale",
+    section: "RN quiz",
+    title: "Revision_Finale",
+    topic: "Réseaux de Neurones",
+    source: "/Users/macbook/Downloads/Revision_Finale.pdf + /Users/macbook/Downloads/Revision_Finale2.pdf",
+    text: "extracted-text/rn-revision-finale.txt",
     parser: "answers"
   }
 ];
@@ -179,13 +197,13 @@ function parseMarked(text) {
 }
 
 function parseAnswers(text) {
-  const splitMatch = text.match(/\n\s*R[^\s]{0,4}ponses\s*\n/i);
+  const splitMatch = text.match(/\n\s*(?:Corrig[ée]|R[^\s]{0,4}ponses(?:\s+Correctes)?)\s*\n/i);
   const questionText = splitMatch ? text.slice(0, splitMatch.index) : text;
   const answerText = splitMatch ? text.slice((splitMatch.index || 0) + splitMatch[0].length) : "";
   const answerMap = new Map();
 
   for (const line of answerText.split(/\r?\n/)) {
-    const match = clean(line).match(/^(\d+)\.\s*([a-d])\)/i);
+    const match = clean(line).match(/^(\d+)\s*[.\-]\s*([a-d])\)?/i);
     if (match) answerMap.set(Number(match[1]), match[2].toLowerCase().charCodeAt(0) - 97);
   }
 
@@ -197,7 +215,7 @@ function parseAnswers(text) {
     if (skipLine(line)) continue;
 
     const question = clean(line).match(/^(\d+)\.\s*(.+)$/);
-    const choice = clean(line).match(/^(?:o|•)?\s*([a-d])\)\s*(.+)$/i);
+    const choice = clean(line).match(/^(?:[-o•]\s*)?([a-d])\)\s*(.+)$/i);
 
     if (question) {
       pushQuestion(questions, current);
