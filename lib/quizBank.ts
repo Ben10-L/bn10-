@@ -222,14 +222,14 @@ export const quizSections = [
               "Des données non étiquetées pour que le modèle apprenne",
               "Des algorithmes capables de se corriger par eux-mêmes",
               "Des données étiquetées pour que le modèle apprenne à partir de ces exemples",
-              "Des données qui ne nécessitent pas de nettoyage Quel type de Machine Learning est utilisé pour des tâches comme la segmentation de marché"
+              "Des données qui ne nécessitent pas de nettoyage"
             ],
             "answer": 2,
             "explanation": "Réponse correcte: Des données étiquetées pour que le modèle apprenne à partir de ces exemples"
           },
           {
             "number": 19,
-            "prompt": "sans étiquettes prédéfinies?",
+            "prompt": "Quel type de Machine Learning est utilisé pour des tâches comme la segmentation de marché sans étiquettes prédéfinies?",
             "choices": [
               "Apprentissage supervisé",
               "Apprentissage non supervisé",
@@ -339,14 +339,14 @@ export const quizSections = [
               "Perte d'information importante",
               "Amélioration de la qualité du modèle",
               "Augmentation de la variance des données",
-              "Aucune conséquence Quelle technique est utilisée pour remplacer les valeurs manquantes par la moyenne ou la"
+              "Aucune conséquence"
             ],
             "answer": 0,
             "explanation": "Réponse correcte: Perte d'information importante"
           },
           {
             "number": 8,
-            "prompt": "médiane?",
+            "prompt": "Quelle technique est utilisée pour remplacer les valeurs manquantes par la moyenne ou la médiane?",
             "choices": [
               "Encodage",
               "Imputation",
@@ -375,14 +375,14 @@ export const quizSections = [
               "Améliorer la performance du modèle",
               "Déformer les résultats du modèle",
               "Aucune influence sur le modèle",
-              "Remplacer les données manquantes Quelle technique transforme les données pour qu'elles aient une moyenne de 0 et un écart-"
+              "Remplacer les données manquantes"
             ],
             "answer": 1,
             "explanation": "Réponse correcte: Déformer les résultats du modèle"
           },
           {
             "number": 11,
-            "prompt": "type de 1?",
+            "prompt": "Quelle technique transforme les données pour qu'elles aient une moyenne de 0 et un écart- type de 1?",
             "choices": [
               "Normalisation",
               "Standardisation",
@@ -399,14 +399,14 @@ export const quizSections = [
               "Pour que les données aient une échelle similaire",
               "Pour réduire le nombre de caractéristiques",
               "Pour gérer les valeurs manquantes",
-              "Aucune des réponses ci-dessus Quelle méthode de transformation est souvent utilisée pour réduire la dimensionnalité d'un jeu"
+              "Aucune des réponses ci-dessus"
             ],
             "answer": 0,
             "explanation": "Réponse correcte: Pour que les données aient une échelle similaire"
           },
           {
             "number": 13,
-            "prompt": "de données?",
+            "prompt": "Quelle méthode de transformation est souvent utilisée pour réduire la dimensionnalité d'un jeu de données?",
             "choices": [
               "PCA (Analyse en Composantes Principales)",
               "Standardisation",
@@ -615,14 +615,14 @@ export const quizSections = [
               "Ordinales",
               "Nominales",
               "Numériques continues",
-              "Aucune des réponses ci-dessus Quelles étapes peuvent être nécessaires avant d'appliquer un modèle de Machine Learning sur"
+              "Aucune des réponses ci-dessus"
             ],
             "answer": 1,
             "explanation": "Réponse correcte: Nominales"
           },
           {
             "number": 31,
-            "prompt": "un jeu de données?",
+            "prompt": "Quelles étapes peuvent être nécessaires avant d'appliquer un modèle de Machine Learning sur un jeu de données?",
             "choices": [
               "Normalisation, nettoyage, transformation",
               "Encodage des données, réduction de dimensionnalité",
@@ -675,14 +675,14 @@ export const quizSections = [
               "Transformation des données dans une échelle de -1 à 1",
               "Transformation des données dans un intervalle de [0, 1]",
               "Transformation des données en logarithmes",
-              "Réduction des données en une seule dimension Quelle technique de transformation est utilisée pour éviter que des variables dominent les"
+              "Réduction des données en une seule dimension"
             ],
             "answer": 1,
             "explanation": "Réponse correcte: Transformation des données dans un intervalle de [0, 1]"
           },
           {
             "number": 36,
-            "prompt": "autres?",
+            "prompt": "Quelle technique de transformation est utilisée pour éviter que des variables dominent les autres?",
             "choices": [
               "Encodage",
               "Normalisation",
@@ -792,14 +792,14 @@ export const quizSections = [
               "Le modèle généralise bien aux nouvelles données.",
               "Le modèle apprend uniquement les détails des données d’entraînement.",
               "Le modèle sous-performe sur les données d’entraînement.",
-              "Le modèle a une perte élevée sur l’ensemble de test. Quel est l’objectif principal du réglage des hyperparamètres dans un modèle de machine"
+              "Le modèle a une perte élevée sur l’ensemble de test."
             ],
             "answer": 1,
             "explanation": "Réponse correcte: Le modèle apprend uniquement les détails des données d’entraînement."
           },
           {
             "number": 5,
-            "prompt": "learning?",
+            "prompt": "Quel est l’objectif principal du réglage des hyperparamètres dans un modèle de machine learning?",
             "choices": [
               "Augmenter la taille du jeu de données.",
               "Optimiser les performances du modèle en ajustant ses paramètres.",
@@ -816,14 +816,14 @@ export const quizSections = [
               "Grid Search teste toutes les combinaisons possibles, Random Search en teste une sélection aléatoire.",
               "Random Search est plus précis que Grid Search.",
               "Grid Search est uniquement utilisé pour les modèles de régression.",
-              "Random Search utilise moins de données que Grid Search. Quel est le rôle principal de la fonction de coût (ou fonction de perte) dans l’entraînement"
+              "Random Search utilise moins de données que Grid Search."
             ],
             "answer": 0,
             "explanation": "Réponse correcte: Grid Search teste toutes les combinaisons possibles, Random Search en teste une sélection aléatoire."
           },
           {
             "number": 7,
-            "prompt": "d’un modèle de machine learning?",
+            "prompt": "Quel est le rôle principal de la fonction de coût (ou fonction de perte) dans l’entraînement d’un modèle de machine learning?",
             "choices": [
               "Évaluer la performance du modèle sur les données d'entraînement.",
               "Calculer la différence entre les prédictions du modèle et les valeurs réelles.",
@@ -960,14 +960,14 @@ export const quizSections = [
               "Un paramètre appris directement par le modèle pendant l'entraînement.",
               "Un paramètre qui contrôle la complexité du modèle mais n'est pas appris.",
               "Un paramètre qui détermine la taille du jeu de données.",
-              "Un paramètre qui détermine le nombre de couches dans un réseau de neurones. Dans un problème de régression, quel est l'objectif principal de la minimisation de l'erreur"
+              "Un paramètre qui détermine le nombre de couches dans un réseau de neurones."
             ],
             "answer": 1,
             "explanation": "Réponse correcte: Un paramètre qui contrôle la complexité du modèle mais n'est pas appris."
           },
           {
             "number": 19,
-            "prompt": "quadratique moyenne (MSE)?",
+            "prompt": "Dans un problème de régression, quel est l'objectif principal de la minimisation de l'erreur quadratique moyenne (MSE)?",
             "choices": [
               "Maximiser la variance du modèle",
               "Minimiser la différence entre les valeurs réelles et les valeurs prédites",
@@ -1017,14 +1017,14 @@ export const quizSections = [
               "Suppression des lignes contenant des valeurs manquantes",
               "Imputation par la moyenne ou la médiane",
               "Remplissage par une valeur constante",
-              "Toutes les réponses ci-dessus Quelle technique est utilisée pour réduire la dimensionnalité tout en conservant"
+              "Toutes les réponses ci-dessus"
             ],
             "answer": 3,
-            "explanation": "Réponse correcte: Toutes les réponses ci-dessus Quelle technique est utilisée pour réduire la dimensionnalité tout en conservant"
+            "explanation": "Réponse correcte: Toutes les réponses ci-dessus"
           },
           {
             "number": 3,
-            "prompt": "l'information maximale?",
+            "prompt": "Quelle technique est utilisée pour réduire la dimensionnalité tout en conservant l'information maximale?",
             "choices": [
               "Analyse en Composantes Principales (PCA)",
               "Sélection de caractéristiques basée sur la corrélation",
@@ -1137,14 +1137,14 @@ export const quizSections = [
               "Réduire le temps de calcul",
               "Améliorer l'interprétabilité",
               "Éviter le surapprentissage",
-              "Toutes les réponses ci-dessus Quel est l'impact de la suppression des caractéristiques corrélées sur un modèle de"
+              "Toutes les réponses ci-dessus"
             ],
             "answer": 3,
-            "explanation": "Réponse correcte: Toutes les réponses ci-dessus Quel est l'impact de la suppression des caractéristiques corrélées sur un modèle de"
+            "explanation": "Réponse correcte: Toutes les réponses ci-dessus"
           },
           {
             "number": 13,
-            "prompt": "régression?",
+            "prompt": "Quel est l'impact de la suppression des caractéristiques corrélées sur un modèle de régression?",
             "choices": [
               "Réduction de la variance du modèle",
               "Amélioration de l'interprétabilité",
@@ -1197,26 +1197,26 @@ export const quizSections = [
               "Minimiser l'erreur entre les prédictions et les valeurs réelles",
               "Maximiser la vraisemblance des données",
               "Réduire la complexité du modèle",
-              "Aucune des réponses ci-dessus Quel est l'impact de l'augmentation du taux d'apprentissage (learning rate) sur un"
+              "Aucune des réponses ci-dessus"
             ],
             "answer": 0,
             "explanation": "Réponse correcte: Minimiser l'erreur entre les prédictions et les valeurs réelles"
           },
           {
             "number": 18,
-            "prompt": "modèle de descente de gradient?",
+            "prompt": "Quel est l'impact de l'augmentation du taux d'apprentissage (learning rate) sur un modèle de descente de gradient?",
             "choices": [
               "Convergence plus rapide",
               "Risque de divergence",
               "Aucun impact",
-              "Risque de divergence et Convergence plus rapide Quelle méthode est utilisée pour évaluer la performance d'un modèle de classification"
+              "Risque de divergence et Convergence plus rapide"
             ],
             "answer": 3,
-            "explanation": "Réponse correcte: Risque de divergence et Convergence plus rapide Quelle méthode est utilisée pour évaluer la performance d'un modèle de classification"
+            "explanation": "Réponse correcte: Risque de divergence et Convergence plus rapide"
           },
           {
             "number": 19,
-            "prompt": "binaire?",
+            "prompt": "Quelle méthode est utilisée pour évaluer la performance d'un modèle de classification binaire?",
             "choices": [
               "Une seule réponse possible.",
               "Courbe ROC",
@@ -2725,7 +2725,7 @@ export const quizSections = [
           },
           {
             "number": 2,
-            "prompt": "Quelle ann´ee marque l’invention du perceptron?",
+            "prompt": "Quelle année marque l’invention du perceptron?",
             "choices": [
               "1943",
               "1957",
@@ -2739,31 +2739,31 @@ export const quizSections = [
             "number": 3,
             "prompt": "Quel est l’objectif principal du perceptron?",
             "choices": [
-              "Classifier des donn´ees lin´eairement s´eparables",
-              "R´ealiser des calculs arithm´etiques",
-              "G´en´erer des images",
+              "Classifier des données linéairement séparables",
+              "Réaliser des calculs arithmétiques",
+              "Générer des images",
               "Traduire des langues"
             ],
             "answer": 0,
-            "explanation": "Réponse correcte: Classifier des donn´ees lin´eairement s´eparables"
+            "explanation": "Réponse correcte: Classifier des données linéairement séparables"
           },
           {
             "number": 4,
             "prompt": "Quelle est la principale limitation du perceptron simple?",
             "choices": [
               "Il ne peut pas apprendre",
-              "Il ne peut pas r´esoudre les probl`emes non lin´eaires",
-              "Il n´ecessite des millions de donn´ees",
+              "Il ne peut pas résoudre les problèmes non linéaires",
+              "Il nécessite des millions de données",
               "Il est trop lent"
             ],
             "answer": 1,
-            "explanation": "Réponse correcte: Il ne peut pas r´esoudre les probl`emes non lin´eaires"
+            "explanation": "Réponse correcte: Il ne peut pas résoudre les problèmes non linéaires"
           },
           {
             "number": 5,
-            "prompt": "Quelle est la fonction d’activation utilis´ee dans un perceptron clas- sique?",
+            "prompt": "Quelle est la fonction d’activation utilisée dans un perceptron clas- sique?",
             "choices": [
-              "Sigmo¨ıde",
+              "Sigmoïde",
               "ReLU",
               "Fonction seuil (step function)",
               "Tangente hyperbolique"
@@ -2773,19 +2773,19 @@ export const quizSections = [
           },
           {
             "number": 6,
-            "prompt": "Quel type d’algorithme est utilis´e pour ajuster les poids du perceptron?",
+            "prompt": "Quel type d’algorithme est utilisé pour ajuster les poids du perceptron?",
             "choices": [
-              "R`egle de Hebb",
+              "Règle de Hebb",
               "Descente de gradient",
               "Algorithme du perceptron",
-              "Algorithme g´en´etique"
+              "Algorithme génétique"
             ],
             "answer": 2,
             "explanation": "Réponse correcte: Algorithme du perceptron"
           },
           {
             "number": 7,
-            "prompt": "Quelle formule repr´esente la mise `a jour des poids dans un perceptron?",
+            "prompt": "Quelle formule représente la mise `a jour des poids dans un perceptron?",
             "choices": [
               "w = w+¸xy",
               "w = w−¸∇J",
@@ -2800,12 +2800,12 @@ export const quizSections = [
             "prompt": "Quelle condition permet d’arrˆeter l’entraˆınement du perceptron?",
             "choices": [
               "Une convergence des poids",
-              "Un nombre maximal d’it´erations atteint",
+              "Un nombre maximal d’itérations atteint",
               "Une erreur nulle",
-              "Toutes les r´eponses pr´ec´edentes"
+              "Toutes les réponses précédentes"
             ],
             "answer": 3,
-            "explanation": "Réponse correcte: Toutes les r´eponses pr´ec´edentes"
+            "explanation": "Réponse correcte: Toutes les réponses précédentes"
           },
           {
             "number": 9,
@@ -2821,71 +2821,71 @@ export const quizSections = [
           },
           {
             "number": 10,
-            "prompt": "Que se passe-t-il si les donn´ees ne sont pas lin´eairement s´eparables?",
+            "prompt": "Que se passe-t-il si les données ne sont pas linéairement séparables?",
             "choices": [
               "Le perceptron ne converge pas",
               "Il trouve toujours une solution",
               "Il ajuste ses poids correctement",
-              "Il pr´edit parfaitement les classes"
+              "Il prédit parfaitement les classes"
             ],
             "answer": 0,
             "explanation": "Réponse correcte: Le perceptron ne converge pas"
           },
           {
             "number": 11,
-            "prompt": "Quelle est la r`egle d’apprentissage du perceptron?",
+            "prompt": "Quelle est la règle d’apprentissage du perceptron?",
             "choices": [
               "Minimiser une fonction de coutˆ",
-              "Mettre a` jour les poids selon l’erreur",
-              "Utiliser la r´etropropagation",
-              "Maximiser l’entropie crois´ee"
+              "Mettre à jour les poids selon l’erreur",
+              "Utiliser la rétropropagation",
+              "Maximiser l’entropie croisée"
             ],
             "answer": 1,
-            "explanation": "Réponse correcte: Mettre a` jour les poids selon l’erreur"
+            "explanation": "Réponse correcte: Mettre à jour les poids selon l’erreur"
           },
           {
             "number": 12,
-            "prompt": "Comment appelle-t-on un perceptron a` plusieurs couches?",
+            "prompt": "Comment appelle-t-on un perceptron à plusieurs couches?",
             "choices": [
-              "R´eseau convolutif",
-              "R´eseau de Hopfield",
+              "Réseau convolutif",
+              "Réseau de Hopfield",
               "Perceptron multicouche",
-              "R´eseau de Boltzmann"
+              "Réseau de Boltzmann"
             ],
             "answer": 2,
             "explanation": "Réponse correcte: Perceptron multicouche"
           },
           {
             "number": 13,
-            "prompt": "Que repr´esente le biais dans un perceptron?",
+            "prompt": "Que représente le biais dans un perceptron?",
             "choices": [
-              "Un param`etre ajustable permettant de d´eplacer l’hyperplan",
+              "Un paramètre ajustable permettant de déplacer l’hyperplan",
               "Un type d’erreur",
               "Une constante fixe",
-              "Un facteur al´eatoire"
+              "Un facteur aléatoire"
             ],
             "answer": 0,
-            "explanation": "Réponse correcte: Un param`etre ajustable permettant de d´eplacer l’hyperplan"
+            "explanation": "Réponse correcte: Un paramètre ajustable permettant de déplacer l’hyperplan"
           },
           {
             "number": 14,
-            "prompt": "Quelle m´ethode permet d’am´eliorer un perceptron simple?",
+            "prompt": "Quelle méthode permet d’améliorer un perceptron simple?",
             "choices": [
-              "Ajouter des couches cach´ees",
-              "R´eduire la taille du dataset",
+              "Ajouter des couches cachées",
+              "Réduire la taille du dataset",
               "Supprimer les biais",
               "Enlever l’algorithme d’apprentissage"
             ],
             "answer": 0,
-            "explanation": "Réponse correcte: Ajouter des couches cach´ees"
+            "explanation": "Réponse correcte: Ajouter des couches cachées"
           },
           {
             "number": 15,
-            "prompt": "Quel est l’impact d’un taux d’apprentissage trop ´elev´e?",
+            "prompt": "Quel est l’impact d’un taux d’apprentissage trop élevé?",
             "choices": [
               "Une convergence rapide et stable",
               "Une divergence possible",
-              "Une meilleure pr´ecision",
+              "Une meilleure précision",
               "Un surapprentissage"
             ],
             "answer": 1,
@@ -2893,50 +2893,51 @@ export const quizSections = [
           },
           {
             "number": 16,
-            "prompt": "Quelle est la complexit´e temporelle de l’algorithme du perceptron en apprentissage?",
+            "prompt": "Quelle est la complexité temporelle de l’algorithme du perceptron en apprentissage?",
             "choices": [
               "O(1)",
               "O(n)",
-              "O(n2)O(en)"
+              "O(n2)",
+              "O(en)"
             ],
             "answer": 1,
             "explanation": "Réponse correcte: O(n)"
           },
           {
             "number": 17,
-            "prompt": "Quelle modification du perceptron permet de r´esoudre le probl`eme XOR?",
+            "prompt": "Quelle modification du perceptron permet de résoudre le problème XOR?",
             "choices": [
-              "Ajouter une deuxi`eme couche",
+              "Ajouter une deuxième couche",
               "Diminuer le taux d’apprentissage",
               "Changer la fonction d’activation",
               "Utiliser un perceptron simple"
             ],
             "answer": 0,
-            "explanation": "Réponse correcte: Ajouter une deuxi`eme couche"
+            "explanation": "Réponse correcte: Ajouter une deuxième couche"
           },
           {
             "number": 18,
-            "prompt": "Quel domaine utilise fr´equemment les perceptrons?",
+            "prompt": "Quel domaine utilise fréquemment les perceptrons?",
             "choices": [
               "Traitement du signal",
               "Apprentissage automatique",
               "Informatique graphique",
-              "Biologie mol´eculaire"
+              "Biologie moléculaire"
             ],
             "answer": 1,
             "explanation": "Réponse correcte: Apprentissage automatique"
           },
           {
             "number": 19,
-            "prompt": "Quelle technique a remplac´e les perceptrons simples?",
+            "prompt": "Quelle technique a remplacé les perceptrons simples?",
             "choices": [
-              "Les r´eseaux de neurones profonds",
-              "Les arbres de d´ecision",
+              "Les réseaux de neurones profonds",
+              "Les arbres de décision",
               "Les k-plus proches voisins (k-NN)",
-              "Les SVM lin´eaires"
+              "Les SVM linéaires"
             ],
             "answer": 0,
-            "explanation": "Réponse correcte: Les r´eseaux de neurones profonds"
+            "explanation": "Réponse correcte: Les réseaux de neurones profonds"
           }
         ]
       },
@@ -3045,7 +3046,7 @@ export const quizSections = [
           },
           {
             "number": 9,
-            "prompt": "L9explosion du gradient est un problème qui se produit:",
+            "prompt": "L'explosion du gradient est un problème qui se produit:",
             "choices": [
               "Lorsque les gradients deviennent très grands",
               "Lorsque les gradients deviennent très petits",
@@ -3198,7 +3199,7 @@ export const quizSections = [
         "questions": [
           {
             "number": 1,
-            "prompt": "Que signifie MLP dans le contexte des r´eseaux de neurones?",
+            "prompt": "Que signifie MLP dans le contexte des réseaux de neurones?",
             "choices": [
               "Machine Learning Perceptron",
               "Multi-Layer Perceptron",
@@ -3210,23 +3211,23 @@ export const quizSections = [
           },
           {
             "number": 2,
-            "prompt": "Quelle est la principale diff´erence entre un perceptron simple et un MLP?",
+            "prompt": "Quelle est la principale différence entre un perceptron simple et un MLP?",
             "choices": [
-              "Le MLP a plusieurs couches cach´ees",
-              "Le MLP utilise des poids n´egatifs",
-              "Le MLP ne peut pas ˆetre entraˆın´e",
-              "Le perceptron simple a plus de param`etres"
+              "Le MLP a plusieurs couches cachées",
+              "Le MLP utilise des poids négatifs",
+              "Le MLP ne peut pas ˆetre entraˆıné",
+              "Le perceptron simple a plus de paramètres"
             ],
             "answer": 0,
-            "explanation": "Réponse correcte: Le MLP a plusieurs couches cach´ees"
+            "explanation": "Réponse correcte: Le MLP a plusieurs couches cachées"
           },
           {
             "number": 3,
-            "prompt": "Quelle fonction d’activation est couramment utilis´ee dans les couches cach´ees d’un MLP?",
+            "prompt": "Quelle fonction d’activation est couramment utilisée dans les couches cachées d’un MLP?",
             "choices": [
               "Fonction seuil",
               "ReLU",
-              "Fonction lin´eaire",
+              "Fonction linéaire",
               "Softmax"
             ],
             "answer": 1,
@@ -3234,31 +3235,31 @@ export const quizSections = [
           },
           {
             "number": 4,
-            "prompt": "Quelle est l’utilit´e de la r´etropropagation dans un MLP?",
+            "prompt": "Quelle est l’utilité de la rétropropagation dans un MLP?",
             "choices": [
               "Calculer les poids initiaux",
-              "Mettre a` jour les poids en fonction de l’erreur",
-              "R´eduire le nombre de couches",
+              "Mettre à jour les poids en fonction de l’erreur",
+              "Réduire le nombre de couches",
               "Transformer un MLP en perceptron simple"
             ],
             "answer": 1,
-            "explanation": "Réponse correcte: Mettre a` jour les poids en fonction de l’erreur"
+            "explanation": "Réponse correcte: Mettre à jour les poids en fonction de l’erreur"
           },
           {
             "number": 5,
-            "prompt": "Quellem´ethodeestutilis´ee pour optimiser les poids lors de l’entraˆınement du MLP?",
+            "prompt": "Quelleméthodeestutilisée pour optimiser les poids lors de l’entraˆınement du MLP?",
             "choices": [
               "Algorithme du perceptron",
               "Descente de gradient",
-              "Algorithme g´en´etique",
-              "R´egression lin´eaire"
+              "Algorithme génétique",
+              "Régression linéaire"
             ],
             "answer": 1,
             "explanation": "Réponse correcte: Descente de gradient"
           },
           {
             "number": 6,
-            "prompt": "Comment s’appelle la fonction qui mesure l’´ecart entre la sortie du mod`ele et la sortie attendue?",
+            "prompt": "Comment s’appelle la fonction qui mesure l’écart entre la sortie du modèle et la sortie attendue?",
             "choices": [
               "Fonction d’activation",
               "Fonction de perte",
@@ -3270,106 +3271,107 @@ export const quizSections = [
           },
           {
             "number": 7,
-            "prompt": "Quelle est la complexit´e de la r´etropropagation en termes de calcul?",
+            "prompt": "Quelle est la complexité de la rétropropagation en termes de calcul?",
             "choices": [
-              "O(n) 2 3",
-              "O(n )O(n ) n",
-              "c) O(e )"
+              "O(n) ",
+              "O(n²)",
+              "O(e)",
+              "O(log(n))"
             ],
-            "answer": 2,
-            "explanation": "Réponse correcte: c) O(e )"
+            "answer": 1,
+            "explanation": "Réponse correcte: O(n²)"
           },
           {
             "number": 8,
-            "prompt": "Pourquoi la fonction ReLU est-elle souvent pr´ef´er´ee a` la sigmo¨ıde dans les couches cach´ees?",
+            "prompt": "Pourquoi la fonction ReLU est-elle souvent préférée à la sigmoïde dans les couches cachées?",
             "choices": [
-              "Elle est plus complexe a` impl´ementer",
-              "Elle r´eduit le probl`eme de gradient ´evanescent",
+              "Elle est plus complexe à implémenter",
+              "Elle réduit le problème de gradient évanescent",
               "Elle fonctionne mieux pour les sorties binaires",
               "Elle est plus lente en calcul"
             ],
             "answer": 1,
-            "explanation": "Réponse correcte: Elle r´eduit le probl`eme de gradient ´evanescent"
+            "explanation": "Réponse correcte: Elle réduit le problème de gradient évanescent"
           },
           {
             "number": 9,
-            "prompt": "Que se passe-t-il si le taux d’apprentissage est trop ´elev´e?",
+            "prompt": "Que se passe-t-il si le taux d’apprentissage est trop élevé?",
             "choices": [
-              "Le mod`ele converge plus rapidement",
-              "Le mod`ele risque de ne pas converger",
+              "Le modèle converge plus rapidement",
+              "Le modèle risque de ne pas converger",
               "Les performances sont toujours meilleures",
               "Rien ne change"
             ],
             "answer": 1,
-            "explanation": "Réponse correcte: Le mod`ele risque de ne pas converger"
+            "explanation": "Réponse correcte: Le modèle risque de ne pas converger"
           },
           {
             "number": 10,
-            "prompt": "Quelle technique peut ˆetre utilis´ee pour ´eviter le surajustement d’un MLP?",
+            "prompt": "Quelle technique peut ˆetre utilisée pour éviter le surajustement d’un MLP?",
             "choices": [
-              "Augmenter la taille du r´eseau",
-              "R´eduire la quantit´e de donn´ees",
-              "Utiliser la r´egularisation L2 ou Dropout",
+              "Augmenter la taille du réseau",
+              "Réduire la quantité de données",
+              "Utiliser la régularisation L2 ou Dropout",
               "Ignorer la fonction de perte"
             ],
             "answer": 2,
-            "explanation": "Réponse correcte: Utiliser la r´egularisation L2 ou Dropout"
+            "explanation": "Réponse correcte: Utiliser la régularisation L2 ou Dropout"
           },
           {
             "number": 11,
-            "prompt": "Quel est le rˆole des couches cach´ees dans un MLP?",
+            "prompt": "Quel est le rˆole des couches cachées dans un MLP?",
             "choices": [
-              "R´eduire le bruit des donn´ees",
-              "Extraire des caract´eristiques complexes",
-              "Diminuer le nombre de param`etres",
+              "Réduire le bruit des données",
+              "Extraire des caractéristiques complexes",
+              "Diminuer le nombre de paramètres",
               "Remplacer la couche de sortie"
             ],
             "answer": 1,
-            "explanation": "Réponse correcte: Extraire des caract´eristiques complexes"
+            "explanation": "Réponse correcte: Extraire des caractéristiques complexes"
           },
           {
             "number": 12,
-            "prompt": "Que repr´esente le biais dans un MLP?",
+            "prompt": "Que représente le biais dans un MLP?",
             "choices": [
               "Une erreur dans l’apprentissage",
-              "Une constante ajout´ee pour ajuster la d´ecision",
-              "Un hyperparam`etre",
+              "Une constante ajoutée pour ajuster la décision",
+              "Un hyperparamètre",
               "Une fonction d’activation"
             ],
             "answer": 1,
-            "explanation": "Réponse correcte: Une constante ajout´ee pour ajuster la d´ecision"
+            "explanation": "Réponse correcte: Une constante ajoutée pour ajuster la décision"
           },
           {
             "number": 13,
-            "prompt": "Pourquoi la normalisation des donn´ees est-elle importante avant d’en- traˆıner un MLP?",
+            "prompt": "Pourquoi la normalisation des données est-elle importante avant d’en- traˆıner un MLP?",
             "choices": [
-              "Pour acc´el´erer la convergence",
-              "Pour empˆecher la r´etropropagation",
-              "Pour am´eliorer le surajustement",
-              "Pour r´eduire le nombre de couches"
+              "Pour accélérer la convergence",
+              "Pour empˆecher la rétropropagation",
+              "Pour améliorer le surajustement",
+              "Pour réduire le nombre de couches"
             ],
             "answer": 0,
-            "explanation": "Réponse correcte: Pour acc´el´erer la convergence"
+            "explanation": "Réponse correcte: Pour accélérer la convergence"
           },
           {
             "number": 14,
-            "prompt": "Quelle est la principale cause du probl`eme de gradient ´evanescent?",
+            "prompt": "Quelle est la principale cause du problème de gradient évanescent?",
             "choices": [
-              "Utilisation de la fonction sigmo¨ıde",
-              "R´eseaux peu profonds",
-              "Apprentissage supervis´e",
+              "Utilisation de la fonction sigmoïde",
+              "Réseaux peu profonds",
+              "Apprentissage supervisé",
               "Descente de gradient stochastique"
             ],
             "answer": 0,
-            "explanation": "Réponse correcte: Utilisation de la fonction sigmo¨ıde"
+            "explanation": "Réponse correcte: Utilisation de la fonction sigmoïde"
           },
           {
             "number": 15,
-            "prompt": "Comment peut-on att´enuer le probl`eme de gradient explosif?",
+            "prompt": "Comment peut-on atténuer le problème de gradient explosif?",
             "choices": [
-              "En normalisant les donn´ees",
+              "En normalisant les données",
               "En limitant les valeurs des gradients",
-              "En ajoutant plus de couches cach´ees",
+              "En ajoutant plus de couches cachées",
               "En utilisant uniquement ReLU"
             ],
             "answer": 1,
@@ -3377,15 +3379,15 @@ export const quizSections = [
           },
           {
             "number": 16,
-            "prompt": "Quelle est l’utilit´e de la fonction softmax?",
+            "prompt": "Quelle est l’utilité de la fonction softmax?",
             "choices": [
-              "Normaliser les sorties en probabilit´es",
-              "R´eduire le nombre de couches",
-              "Acc´el´erer la descente de gradient",
+              "Normaliser les sorties en probabilités",
+              "Réduire le nombre de couches",
+              "Accélérer la descente de gradient",
               "Remplacer la fonction de coutˆ"
             ],
             "answer": 0,
-            "explanation": "Réponse correcte: Normaliser les sorties en probabilit´es"
+            "explanation": "Réponse correcte: Normaliser les sorties en probabilités"
           }
         ]
       },
@@ -3410,19 +3412,19 @@ export const quizSections = [
           },
           {
             "number": 2,
-            "prompt": "Keras est principalement utilis´e pour:",
+            "prompt": "Keras est principalement utilisé pour:",
             "choices": [
               "Traitement d’images",
-              "D´eveloppement de r´eseaux de neurones",
-              "R´eseaux sans fil",
+              "Développement de réseaux de neurones",
+              "Réseaux sans fil",
               "Compression de fichiers"
             ],
             "answer": 1,
-            "explanation": "Réponse correcte: D´eveloppement de r´eseaux de neurones"
+            "explanation": "Réponse correcte: Développement de réseaux de neurones"
           },
           {
             "number": 3,
-            "prompt": "Quelle classe Keras est utilis´ee pour d´efinir un mod`ele s´equentiel?",
+            "prompt": "Quelle classe Keras est utilisée pour définir un modèle séquentiel?",
             "choices": [
               "keras.layers",
               "keras.Model",
@@ -3434,7 +3436,7 @@ export const quizSections = [
           },
           {
             "number": 4,
-            "prompt": "Quelle fonction est utilis´ee pour compiler un mod`ele Keras?",
+            "prompt": "Quelle fonction est utilisée pour compiler un modèle Keras?",
             "choices": [
               "model.compile()",
               "model.fit()",
@@ -3446,7 +3448,7 @@ export const quizSections = [
           },
           {
             "number": 5,
-            "prompt": "Quel optimiseur est souvent utilis´e avec Keras?",
+            "prompt": "Quel optimiseur est souvent utilisé avec Keras?",
             "choices": [
               "Adam",
               "Gradient Boosting",
@@ -3458,7 +3460,7 @@ export const quizSections = [
           },
           {
             "number": 6,
-            "prompt": "Quelle m´ethode est utilis´ee pour entraˆıner un mod`ele Keras?",
+            "prompt": "Quelle méthode est utilisée pour entraˆıner un modèle Keras?",
             "choices": [
               "model.train()",
               "model.evaluate()",
@@ -3470,27 +3472,27 @@ export const quizSections = [
           },
           {
             "number": 7,
-            "prompt": "Quelle fonction d’activation est couramment utilis´ee en sortie d’un mod`ele de classification binaire?",
+            "prompt": "Quelle fonction d’activation est couramment utilisée en sortie d’un modèle de classification binaire?",
             "choices": [
               "ReLU",
-              "Sigmo¨ıde",
+              "Sigmoïde",
               "Softmax",
               "Tanh"
             ],
             "answer": 1,
-            "explanation": "Réponse correcte: Sigmo¨ıde"
+            "explanation": "Réponse correcte: Sigmoïde"
           },
           {
             "number": 8,
-            "prompt": "Que permet la m´ethode model.summary()?",
+            "prompt": "Que permet la méthode model.summary()?",
             "choices": [
-              "Compiler le mod`ele",
-              "Afficher la structure du mod`ele",
-              "Sauvegarder le mod`ele",
-              "Ajouter une nouvelle couche au mod`ele"
+              "Compiler le modèle",
+              "Afficher la structure du modèle",
+              "Sauvegarder le modèle",
+              "Ajouter une nouvelle couche au modèle"
             ],
             "answer": 1,
-            "explanation": "Réponse correcte: Afficher la structure du mod`ele"
+            "explanation": "Réponse correcte: Afficher la structure du modèle"
           },
           {
             "number": 9,
@@ -3499,26 +3501,26 @@ export const quizSections = [
               "Oui, avec TensorFlow en backend",
               "Non, uniquement CPU",
               "Seulement avec PyTorch",
-              "Non, cela n´ecessite une autre biblioth`eque"
+              "Non, cela nécessite une autre bibliothèque"
             ],
             "answer": 0,
             "explanation": "Réponse correcte: Oui, avec TensorFlow en backend"
           },
           {
             "number": 10,
-            "prompt": "Quelle est l’utilit´e de la fonction model.evaluate()?",
+            "prompt": "Quelle est l’utilité de la fonction model.evaluate()?",
             "choices": [
-              "Ajuster les hyperparam`etres ´",
-              "Evaluer la performance du mod`ele",
-              "Ajouter des donn´ees d’entraˆınement",
-              "Entraˆıner le mod`ele"
+              "Ajuster les hyperparamètres ´",
+              "Evaluer la performance du modèle",
+              "Ajouter des données d’entraˆınement",
+              "Entraˆıner le modèle"
             ],
             "answer": 1,
-            "explanation": "Réponse correcte: Evaluer la performance du mod`ele"
+            "explanation": "Réponse correcte: Evaluer la performance du modèle"
           },
           {
             "number": 11,
-            "prompt": "Comment sauvegarder un mod`ele entraˆın´e en Keras?",
+            "prompt": "Comment sauvegarder un modèle entraˆıné en Keras?",
             "choices": [
               "model.save(’model.h5’)",
               "model.export(’model.h5’)",
@@ -3530,11 +3532,11 @@ export const quizSections = [
           },
           {
             "number": 12,
-            "prompt": "Quelle fonction d’activation est souvent utilis´ee en sortie d’un mod`ele de classification multi-classes?",
+            "prompt": "Quelle fonction d’activation est souvent utilisée en sortie d’un modèle de classification multi-classes?",
             "choices": [
               "ReLU",
               "Softmax",
-              "Sigmo¨ıde",
+              "Sigmoïde",
               "Tanh"
             ],
             "answer": 1,
@@ -3542,7 +3544,7 @@ export const quizSections = [
           },
           {
             "number": 13,
-            "prompt": "Quelle couche Keras est utilis´ee pour aplatir une entr´ee multidimen- sionnelle?",
+            "prompt": "Quelle couche Keras est utilisée pour aplatir une entrée multidimen- sionnelle?",
             "choices": [
               "Dense",
               "Flatten",
@@ -3554,19 +3556,19 @@ export const quizSections = [
           },
           {
             "number": 14,
-            "prompt": "Que fait la couche Dropout dans un mod`ele Keras?",
+            "prompt": "Que fait la couche Dropout dans un modèle Keras?",
             "choices": [
-              "R´eduit le surajustement",
-              "Augmente la taille du r´eseau",
-              "Acc´el`ere l’entraˆınement",
-              "R´eduit le nombre de couches"
+              "Réduit le surajustement",
+              "Augmente la taille du réseau",
+              "Accélère l’entraˆınement",
+              "Réduit le nombre de couches"
             ],
             "answer": 0,
-            "explanation": "Réponse correcte: R´eduit le surajustement"
+            "explanation": "Réponse correcte: Réduit le surajustement"
           },
           {
             "number": 15,
-            "prompt": "Comment ajouter une couche enti`erement connect´ee dans un mod`ele Keras?",
+            "prompt": "Comment ajouter une couche entièrement connectée dans un modèle Keras?",
             "choices": [
               "keras.layers.Conv2D()",
               "keras.layers.Dense()",
@@ -3578,7 +3580,7 @@ export const quizSections = [
           },
           {
             "number": 16,
-            "prompt": "Quelle fonction est utilis´ee pour charger un mod`ele sauvegard´e?",
+            "prompt": "Quelle fonction est utilisée pour charger un modèle sauvegardé?",
             "choices": [
               "keras.models.load odel()keras.models.import odel() m m",
               "c) keras.models.restore odel()keras.models.open odel() m m"
@@ -3590,17 +3592,17 @@ export const quizSections = [
             "number": 17,
             "prompt": "Que signifie l’argument batch izedansmodel.fit()? s",
             "choices": [
-              "Nombre d’it´erations",
-              "Nombre d’´echantillons trait´es avant mise `a jour des poids",
+              "Nombre d’itérations",
+              "Nombre d’échantillons traités avant mise `a jour des poids",
               "Nombre total de neurones",
-              "Nombre de couches cach´ees"
+              "Nombre de couches cachées"
             ],
             "answer": 1,
-            "explanation": "Réponse correcte: Nombre d’´echantillons trait´es avant mise `a jour des poids"
+            "explanation": "Réponse correcte: Nombre d’échantillons traités avant mise `a jour des poids"
           },
           {
             "number": 18,
-            "prompt": "Comment peut-on visualiser les m´etriques d’entraˆınement en Keras?",
+            "prompt": "Comment peut-on visualiser les métriques d’entraˆınement en Keras?",
             "choices": [
               "Avec Matplotlib et les logs de l’entraˆınement",
               "Avec model.visualize()",
@@ -3612,7 +3614,7 @@ export const quizSections = [
           },
           {
             "number": 19,
-            "prompt": "Quel backend Keras utilise-t-il par d´efaut?",
+            "prompt": "Quel backend Keras utilise-t-il par défaut?",
             "choices": [
               "Theano",
               "PyTorch",
@@ -3645,7 +3647,7 @@ export const quizSections = [
           },
           {
             "number": 2,
-            "prompt": "En quelle ann´ee le perceptron a-t-il ´et´e d´evelopp´e?",
+            "prompt": "En quelle année le perceptron a-t-il été développé?",
             "choices": [
               "1957",
               "1969",
@@ -3660,31 +3662,31 @@ export const quizSections = [
             "prompt": "Quelle est la principale limitation du perceptron selon Minsky et Pa- pert?",
             "choices": [
               "Il ne peut pas apprendre",
-              "Il ne peut pas r´esoudre les probl`emes non lin´eairement s´eparables",
+              "Il ne peut pas résoudre les problèmes non linéairement séparables",
               "Il est trop lent",
               "Il est trop complexe"
             ],
             "answer": 1,
-            "explanation": "Réponse correcte: Il ne peut pas r´esoudre les probl`emes non lin´eairement s´eparables"
+            "explanation": "Réponse correcte: Il ne peut pas résoudre les problèmes non linéairement séparables"
           },
           {
             "number": 4,
-            "prompt": "Quel est le premier mod`ele de neurone artificiel propos´e?",
+            "prompt": "Quel est le premier modèle de neurone artificiel proposé?",
             "choices": [
               "Le perceptron",
               "Le neurone de McCulloch-Pitts",
-              "Le r´eseau convolutif",
-              "Le r´eseau de Hopfield"
+              "Le réseau convolutif",
+              "Le réseau de Hopfield"
             ],
             "answer": 1,
             "explanation": "Réponse correcte: Le neurone de McCulloch-Pitts"
           },
           {
             "number": 5,
-            "prompt": "Quel algorithme est utilis´e pour ajuster les poids dans un perceptron?",
+            "prompt": "Quel algorithme est utilisé pour ajuster les poids dans un perceptron?",
             "choices": [
               "Descente de gradient",
-              "R`egle de Hebb",
+              "Règle de Hebb",
               "Algorithme du perceptron",
               "Backpropagation"
             ],
@@ -3693,7 +3695,7 @@ export const quizSections = [
           },
           {
             "number": 6,
-            "prompt": "Quel livre a critiqu´e s´ev`erement les r´eseaux de neurones en 1969?",
+            "prompt": "Quel livre a critiqué sévèrement les réseaux de neurones en 1969?",
             "choices": [
               "”Neural Networks and Deep Learning”",
               "”Perceptrons”",
@@ -3705,7 +3707,7 @@ export const quizSections = [
           },
           {
             "number": 7,
-            "prompt": "Quel chercheur a popularis´e le concept de r´etropropagation dans les ann´ees 1980?",
+            "prompt": "Quel chercheur a popularisé le concept de rétropropagation dans les années 1980?",
             "choices": [
               "Yann LeCun",
               "Geoffrey Hinton",
@@ -3717,34 +3719,34 @@ export const quizSections = [
           },
           {
             "number": 8,
-            "prompt": "Quel type de probl`eme le perceptron simple ne peut-il pas r´esoudre?",
+            "prompt": "Quel type de problème le perceptron simple ne peut-il pas résoudre?",
             "choices": [
               "XOR",
               "ET logique",
               "OU logique",
-              "Classification lin´eaire"
+              "Classification linéaire"
             ],
             "answer": 0,
             "explanation": "Réponse correcte: XOR"
           },
           {
             "number": 9,
-            "prompt": "Quelle avanc´ee a permis le renouveau des r´eseaux de neurones dans les ann´ees 2000?",
+            "prompt": "Quelle avancée a permis le renouveau des réseaux de neurones dans les années 2000?",
             "choices": [
               "L’augmentation de la puissance de calcul",
-              "L’am´elioration des algorithmes",
-              "La disponibilit´e de grandes quantit´es de donn´ees",
-              "Toutes les r´eponses pr´ec´edentes"
+              "L’amélioration des algorithmes",
+              "La disponibilité de grandes quantités de données",
+              "Toutes les réponses précédentes"
             ],
             "answer": 3,
-            "explanation": "Réponse correcte: Toutes les r´eponses pr´ec´edentes"
+            "explanation": "Réponse correcte: Toutes les réponses précédentes"
           },
           {
             "number": 10,
-            "prompt": "Quelle est la fonction d’activation utilis´ee dans un perceptron clas- sique?",
+            "prompt": "Quelle est la fonction d’activation utilisée dans un perceptron clas- sique?",
             "choices": [
               "ReLU",
-              "Sigmo¨ıde",
+              "Sigmoïde",
               "Seuil (Step function)",
               "Tangente hyperbolique"
             ],
@@ -3753,11 +3755,11 @@ export const quizSections = [
           },
           {
             "number": 11,
-            "prompt": "Quelle fonction d’activation est souvent utilis´ee dans les r´eseaux de neurones profonds?",
+            "prompt": "Quelle fonction d’activation est souvent utilisée dans les réseaux de neurones profonds?",
             "choices": [
               "ReLU",
-              "Fonction identit´e",
-              "Fonction lin´eaire",
+              "Fonction identité",
+              "Fonction linéaire",
               "Seuil"
             ],
             "answer": 0,
@@ -3777,31 +3779,31 @@ export const quizSections = [
           },
           {
             "number": 13,
-            "prompt": "Quel r´eseau de neurones est principalement utilis´e pour la reconnais- sance d’images?",
+            "prompt": "Quel réseau de neurones est principalement utilisé pour la reconnais- sance d’images?",
             "choices": [
-              "R´eseau convolutif (CNN)",
-              "R´eseau r´ecurrent (RNN)",
+              "Réseau convolutif (CNN)",
+              "Réseau récurrent (RNN)",
               "Perceptron simple",
-              "R´eseau de Hopfield"
+              "Réseau de Hopfield"
             ],
             "answer": 0,
-            "explanation": "Réponse correcte: R´eseau convolutif (CNN)"
+            "explanation": "Réponse correcte: Réseau convolutif (CNN)"
           },
           {
             "number": 14,
-            "prompt": "Quelle est la principale caract´eristique des r´eseaux r´ecurrents (RNN)?",
+            "prompt": "Quelle est la principale caractéristique des réseaux récurrents (RNN)?",
             "choices": [
-              "Ils ont des connexions r´ecurrentes permettant la m´emoire",
-              "Ils sont utilis´es uniquement pour la classification d’images",
-              "Ils ne n´ecessitent pas de fonction d’activation",
-              "Ils ne sont pas adapt´es aux s´eries temporelles"
+              "Ils ont des connexions récurrentes permettant la mémoire",
+              "Ils sont utilisés uniquement pour la classification d’images",
+              "Ils ne nécessitent pas de fonction d’activation",
+              "Ils ne sont pas adaptés aux séries temporelles"
             ],
             "answer": 0,
-            "explanation": "Réponse correcte: Ils ont des connexions r´ecurrentes permettant la m´emoire"
+            "explanation": "Réponse correcte: Ils ont des connexions récurrentes permettant la mémoire"
           },
           {
             "number": 15,
-            "prompt": "Qui est connu pour avoir d´evelopp´e les r´eseaux convolutifs modernes?",
+            "prompt": "Qui est connu pour avoir développé les réseaux convolutifs modernes?",
             "choices": [
               "Yann LeCun",
               "Geoffrey Hinton",
@@ -3813,24 +3815,24 @@ export const quizSections = [
           },
           {
             "number": 16,
-            "prompt": "Quelle est l’une des principales limites des r´eseaux de neurones?",
+            "prompt": "Quelle est l’une des principales limites des réseaux de neurones?",
             "choices": [
-              "Ils n´ecessitent beaucoup de donn´ees pour un bon entraˆınement",
+              "Ils nécessitent beaucoup de données pour un bon entraˆınement",
               "Ils ne peuvent pas apprendre",
-              "Ils ne sont pas utilis´es en pratique",
-              "Ils sont toujours plus performants que les m´ethodes classiques"
+              "Ils ne sont pas utilisés en pratique",
+              "Ils sont toujours plus performants que les méthodes classiques"
             ],
             "answer": 0,
-            "explanation": "Réponse correcte: Ils n´ecessitent beaucoup de donn´ees pour un bon entraˆınement"
+            "explanation": "Réponse correcte: Ils nécessitent beaucoup de données pour un bon entraˆınement"
           },
           {
             "number": 17,
-            "prompt": "Quelle est l’utilit´e de la descente de gradient?",
+            "prompt": "Quelle est l’utilité de la descente de gradient?",
             "choices": [
               "Minimiser la fonction de coutˆ",
               "Augmenter la fonction de coutˆ",
               "Trouver le maximum d’une fonction",
-              "Ajuster la taille du r´eseau"
+              "Ajuster la taille du réseau"
             ],
             "answer": 0,
             "explanation": "Réponse correcte: Minimiser la fonction de coutˆ"
