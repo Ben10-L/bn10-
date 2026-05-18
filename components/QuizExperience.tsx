@@ -11,6 +11,7 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
   const [elapsedSeconds, setElapsedSeconds] = useState(0);
   const [finishedEarly, setFinishedEarly] = useState(false);
   const [showFinishConfirm, setShowFinishConfirm] = useState(false);
+  const [showRestartConfirm, setShowRestartConfirm] = useState(false);
   const resultSoundPlayedRef = useRef(false);
   const questions = quiz.bankQuestions;
   const completed = finishedEarly || currentIndex >= questions.length;
@@ -26,6 +27,7 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
     setElapsedSeconds(0);
     setFinishedEarly(false);
     setShowFinishConfirm(false);
+    setShowRestartConfirm(false);
     resultSoundPlayedRef.current = false;
     reset();
   }, [quiz.slug, reset]);
@@ -50,8 +52,10 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
   const elapsedLabel = formatTime(elapsedSeconds);
 
   function restartQuiz() {
+    setElapsedSeconds(0);
     setFinishedEarly(false);
     setShowFinishConfirm(false);
+    setShowRestartConfirm(false);
     resultSoundPlayedRef.current = false;
     reset();
   }
@@ -112,15 +116,6 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
               <div className="mt-3">
                 <Metric label="Chrono" value={elapsedLabel} />
               </div>
-              {!completed ? (
-                <button
-                  onClick={() => setShowFinishConfirm(true)}
-                  className="quiz-results-button focus-ring mt-4 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full px-4 font-semibold transition hover:scale-[1.02]"
-                >
-                  <BarChart3 size={16} />
-                  Résultats
-                </button>
-              ) : null}
             </div>
           </div>
         </aside>
@@ -130,15 +125,6 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
             <div className="nothing-chip rounded-full px-4 py-2 text-sm">{quiz.title}</div>
             <div className="flex flex-wrap items-center gap-2">
               <div className="nothing-chip rounded-full px-4 py-2 font-mono text-sm">Chrono {elapsedLabel}</div>
-              {!completed ? (
-                <button
-                  onClick={() => setShowFinishConfirm(true)}
-                  className="quiz-results-button focus-ring inline-flex min-h-10 items-center justify-center gap-2 rounded-full px-4 text-sm font-semibold transition hover:scale-[1.02]"
-                >
-                  <BarChart3 size={16} />
-                  Résultats
-                </button>
-              ) : null}
             </div>
           </div>
 
@@ -157,7 +143,7 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
                       {finishedEarly ? "Quiz arrêté. Les questions non répondues sont ignorées dans ce score." : `Correction complète pour ${quiz.title}.`} Temps total: {elapsedLabel}.
                     </p>
                   </div>
-                  <button onClick={restartQuiz} className="neon-border focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-black px-5 font-semibold transition hover:scale-[1.02]">
+                  <button onClick={() => setShowRestartConfirm(true)} className="neon-border focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-black px-5 font-semibold transition hover:scale-[1.02]">
                     <RotateCcw size={17} />
                     Refaire le quiz
                   </button>
@@ -249,7 +235,7 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
 
             {!completed ? (
               <div className="mt-8 flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
-                <button onClick={restartQuiz} className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/15 px-4 text-gray-300 transition hover:border-red-500/45 hover:text-white">
+                <button onClick={() => setShowRestartConfirm(true)} className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/15 px-4 text-gray-300 transition hover:border-red-500/45 hover:text-white">
                   <RotateCcw size={17} />
                   Recommencer
                 </button>
@@ -299,7 +285,7 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
               </button>
             </div>
             <p className="mt-4 text-sm leading-6 text-gray-300">
-              Are you sure you want to finish the quiz and see your results?
+              Voulez-vous terminer le quiz maintenant et voir vos résultats ?
             </p>
             <div className="mt-5 grid grid-cols-3 gap-3">
               <Metric label="Correctes" value={`${score}`} />
@@ -311,14 +297,58 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
                 onClick={() => setShowFinishConfirm(false)}
                 className="focus-ring inline-flex min-h-12 items-center justify-center rounded-full border border-white/15 px-5 font-semibold text-gray-300 transition hover:border-white/35 hover:text-white"
               >
-                Resume Quiz
+                Continuer le quiz
               </button>
               <button
                 onClick={finishNow}
                 className="neon-border focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-black px-5 font-semibold text-white transition hover:scale-[1.02]"
               >
                 <BarChart3 size={17} />
-                See Results
+                Voir les résultats
+              </button>
+            </div>
+          </div>
+        </div>
+      ) : null}
+
+      {showRestartConfirm ? (
+        <div className="fixed inset-0 z-[70] grid place-items-center bg-black/70 px-4 backdrop-blur-md">
+          <div className="nothing-panel w-full max-w-md animate-reveal rounded-[1.25rem] p-5 shadow-2xl">
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <p className="dot-title text-xs text-red-400">Recommencer le quiz</p>
+                <h2 className="mt-2 font-display text-2xl font-semibold text-white">Voulez-vous vraiment recommencer ?</h2>
+              </div>
+              <button
+                onClick={() => setShowRestartConfirm(false)}
+                className="focus-ring grid h-10 w-10 shrink-0 place-items-center rounded-full border border-white/15 text-gray-300 transition hover:border-white/35 hover:text-white"
+                aria-label="Annuler"
+                title="Annuler"
+              >
+                <X size={17} />
+              </button>
+            </div>
+            <p className="mt-4 text-sm leading-6 text-gray-300">
+              Si vous recommencez, toutes vos réponses actuelles seront supprimées.
+            </p>
+            <div className="mt-5 grid grid-cols-3 gap-3">
+              <Metric label="Correctes" value={`${score}`} />
+              <Metric label="Répondues" value={`${quizAnswers.length}`} />
+              <Metric label="Temps" value={elapsedLabel} />
+            </div>
+            <div className="mt-6 flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
+              <button
+                onClick={() => setShowRestartConfirm(false)}
+                className="focus-ring inline-flex min-h-12 items-center justify-center rounded-full border border-white/15 px-5 font-semibold text-gray-300 transition hover:border-white/35 hover:text-white"
+              >
+                Annuler
+              </button>
+              <button
+                onClick={restartQuiz}
+                className="neon-border focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-black px-5 font-semibold text-white transition hover:scale-[1.02]"
+              >
+                <RotateCcw size={17} />
+                Oui, recommencer
               </button>
             </div>
           </div>
