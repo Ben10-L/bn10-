@@ -12,6 +12,7 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
   const [elapsedSeconds, setElapsedSeconds] = useState(0);
   const [isFinishedEarly, setIsFinishedEarly] = useState(false);
   const [showFinishConfirm, setShowFinishConfirm] = useState(false);
+  const [showRestartConfirm, setShowRestartConfirm] = useState(false);
 
   const resultSoundPlayedRef = useRef(false);
 
@@ -23,7 +24,6 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
 
   const safeQuestionIndex = Math.min(currentIndex, Math.max(questions.length - 1, 0));
   const question = questions[safeQuestionIndex];
-
   const questionId = question ? `${quiz.slug}-${question.number}` : "";
 
   const quizAnswers = useMemo(
@@ -45,7 +45,6 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
   );
 
   const scoreBase = isFinishedEarly ? quizAnswers.length : questions.length;
-
   const resultLabel = `${score}/${scoreBase}`;
   const scorePercent = scoreBase === 0 ? 0 : Math.round((score / scoreBase) * 100);
 
@@ -78,6 +77,7 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
     setElapsedSeconds(0);
     setIsFinishedEarly(false);
     setShowFinishConfirm(false);
+    setShowRestartConfirm(false);
     resultSoundPlayedRef.current = false;
     reset();
   }, [quiz.slug, reset]);
@@ -114,6 +114,7 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
     setElapsedSeconds(0);
     setIsFinishedEarly(false);
     setShowFinishConfirm(false);
+    setShowRestartConfirm(false);
     resultSoundPlayedRef.current = false;
     reset();
   }
@@ -131,9 +132,11 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
             <ArrowLeft size={16} />
             Retour aux quiz
           </Link>
+
           <h1 className="mt-6 dot-title text-3xl font-semibold">
             Aucune question disponible
           </h1>
+
           <p className="mt-3 text-gray-400">
             Ce quiz ne contient pas encore de questions extractibles.
           </p>
@@ -161,7 +164,11 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
 
             <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
               <p className="text-xs uppercase text-gray-500">{quiz.section}</p>
-              <h1 className="mt-2 font-display text-2xl font-semibold">{quiz.title}</h1>
+
+              <h1 className="mt-2 font-display text-2xl font-semibold">
+                {quiz.title}
+              </h1>
+
               <p className="mt-2 text-sm text-gray-400">
                 {quiz.topic} · {quiz.questions} questions
               </p>
@@ -177,16 +184,6 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
               <div className="mt-3">
                 <Metric label="Chrono" value={elapsedLabel} />
               </div>
-
-              {!isQuizCompleted && (
-                <button
-                  onClick={() => setShowFinishConfirm(true)}
-                  className="focus-ring mt-4 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full border border-red-500/35 bg-red-500/[0.08] px-4 font-semibold text-red-100 transition hover:border-red-400/70 hover:bg-red-500/[0.14]"
-                >
-                  <BarChart3 size={16} />
-                  Résultats
-                </button>
-              )}
             </div>
           </div>
         </aside>
@@ -198,8 +195,9 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
             </div>
 
             <div className="nothing-chip rounded-full px-4 py-2 font-mono text-sm">
-                Chrono {elapsedLabel}
+              Chrono {elapsedLabel}
             </div>
+          </div>
 
           <div className="nothing-panel relative overflow-hidden rounded-[1.35rem] p-4 sm:p-6 lg:p-8">
             <div className="absolute right-5 top-5 rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-xs text-gray-300">
@@ -221,14 +219,13 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
                     <p className="mt-3 max-w-2xl text-gray-300">
                       {isFinishedEarly
                         ? "Quiz arrêté. Les questions non répondues sont ignorées dans ce score."
-                        : `Correction complète pour ${quiz.title}.`}
-                      {" "}
+                        : `Correction complète pour ${quiz.title}.`}{" "}
                       Temps total: {elapsedLabel}.
                     </p>
                   </div>
 
                   <button
-                    onClick={restartQuiz}
+                    onClick={() => setShowRestartConfirm(true)}
                     className="neon-border focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-black px-5 font-semibold transition hover:scale-[1.02]"
                   >
                     <RotateCcw size={17} />
@@ -254,6 +251,7 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
                     const answer = answers.find((entry) => entry.questionId === id);
 
                     const isCorrect = answer?.correct === true;
+
                     const selectedChoice =
                       typeof answer?.selected === "number"
                         ? item.choices[answer.selected]
@@ -275,6 +273,7 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
                             <p className="dot-title text-xs text-gray-500">
                               Question {item.number}
                             </p>
+
                             <h3 className="mt-2 font-display text-lg font-semibold text-white">
                               {item.prompt}
                             </h3>
@@ -311,7 +310,9 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
                           <p className="dot-title text-[11px] text-gray-500">
                             Pourquoi c’est vrai ?
                           </p>
+
                           <p className="mt-2 font-semibold">{correctChoice}</p>
+
                           <p className="mt-1 text-gray-300">
                             {getCorrectExplanation(correctChoice, item.explanation)}
                           </p>
@@ -355,7 +356,10 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
                           <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-white/15 bg-black/50 font-mono text-sm text-gray-300">
                             {index + 1}
                           </span>
-                          <span className="text-base text-gray-100">{choice}</span>
+
+                          <span className="text-base text-gray-100">
+                            {choice}
+                          </span>
                         </span>
                       </button>
                     );
@@ -367,19 +371,27 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
             {!isQuizCompleted && (
               <div className="mt-8 flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <button
-                  onClick={restartQuiz}
+                  onClick={() => setShowRestartConfirm(true)}
                   className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/15 px-4 text-gray-300 transition hover:border-red-500/45 hover:text-white"
                 >
                   <RotateCcw size={17} />
                   Recommencer
                 </button>
 
-                <div className="flex gap-3">
+                <div className="flex flex-wrap justify-end gap-3">
                   <button
                     onClick={previous}
                     className="focus-ring min-h-12 rounded-full border border-white/15 px-5 text-gray-300 transition hover:border-white/35 hover:text-white"
                   >
                     Précédent
+                  </button>
+
+                  <button
+                    onClick={() => setShowFinishConfirm(true)}
+                    className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-red-500/35 bg-red-500/[0.08] px-5 font-semibold text-red-100 transition hover:border-red-400/70 hover:bg-red-500/[0.14]"
+                  >
+                    <BarChart3 size={17} />
+                    Résultats
                   </button>
 
                   <button
@@ -402,7 +414,10 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
           <div className="nothing-panel w-full max-w-md animate-reveal rounded-[1.25rem] p-5 shadow-2xl">
             <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="dot-title text-xs text-red-400">Voir les résultats</p>
+                <p className="dot-title text-xs text-red-400">
+                  Voir les résultats
+                </p>
+
                 <h2 className="mt-2 font-display text-2xl font-semibold text-white">
                   Terminer le quiz ?
                 </h2>
@@ -447,6 +462,60 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
           </div>
         </div>
       )}
+
+      {showRestartConfirm && (
+        <div className="fixed inset-0 z-[70] grid place-items-center bg-black/70 px-4 backdrop-blur-md">
+          <div className="nothing-panel w-full max-w-md animate-reveal rounded-[1.25rem] p-5 shadow-2xl">
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <p className="dot-title text-xs text-red-400">
+                  Recommencer le quiz
+                </p>
+
+                <h2 className="mt-2 font-display text-2xl font-semibold text-white">
+                  Voulez-vous vraiment recommencer ?
+                </h2>
+              </div>
+
+              <button
+                onClick={() => setShowRestartConfirm(false)}
+                className="focus-ring grid h-10 w-10 shrink-0 place-items-center rounded-full border border-white/15 text-gray-300 transition hover:border-white/35 hover:text-white"
+                aria-label="Annuler"
+                title="Annuler"
+              >
+                <X size={17} />
+              </button>
+            </div>
+
+            <p className="mt-4 text-sm leading-6 text-gray-300">
+              Si vous recommencez, toutes vos réponses actuelles seront supprimées.
+            </p>
+
+            <div className="mt-5 grid grid-cols-3 gap-3">
+              <Metric label="Correctes" value={`${score}`} />
+              <Metric label="Répondues" value={`${quizAnswers.length}`} />
+              <Metric label="Temps" value={elapsedLabel} />
+            </div>
+
+            <div className="mt-6 flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
+              <button
+                onClick={() => setShowRestartConfirm(false)}
+                className="focus-ring inline-flex min-h-12 items-center justify-center rounded-full border border-white/15 px-5 font-semibold text-gray-300 transition hover:border-white/35 hover:text-white"
+              >
+                Annuler
+              </button>
+
+              <button
+                onClick={restartQuiz}
+                className="neon-border focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-black px-5 font-semibold text-white transition hover:scale-[1.02]"
+              >
+                <RotateCcw size={17} />
+                Oui, recommencer
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
@@ -473,6 +542,7 @@ function getCorrectExplanation(correctChoice: string, explanation: string) {
 function getResultSound(scorePercent: number) {
   if (scorePercent >= 80) return "/sounds/WOOW.mp3";
   if (scorePercent < 40) return "/sounds/HAHAHAH.wav";
+
   return "/sounds/MMMM.mp3";
 }
 
