@@ -115,7 +115,7 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
               {!completed ? (
                 <button
                   onClick={() => setShowFinishConfirm(true)}
-                  className="focus-ring mt-4 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full border border-red-500/35 bg-red-500/[0.08] px-4 font-semibold text-red-100 transition hover:border-red-400/70 hover:bg-red-500/[0.14]"
+                  className="quiz-results-button focus-ring mt-4 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full px-4 font-semibold transition hover:scale-[1.02]"
                 >
                   <BarChart3 size={16} />
                   Résultats
@@ -133,7 +133,7 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
               {!completed ? (
                 <button
                   onClick={() => setShowFinishConfirm(true)}
-                  className="focus-ring inline-flex min-h-10 items-center justify-center gap-2 rounded-full border border-red-500/35 bg-red-500/[0.08] px-4 text-sm font-semibold text-red-100 transition hover:border-red-400/70 hover:bg-red-500/[0.14]"
+                  className="quiz-results-button focus-ring inline-flex min-h-10 items-center justify-center gap-2 rounded-full px-4 text-sm font-semibold transition hover:scale-[1.02]"
                 >
                   <BarChart3 size={16} />
                   Résultats
@@ -270,6 +270,16 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
           </div>
         </div>
       </div>
+
+      {!completed ? (
+        <button
+          onClick={() => setShowFinishConfirm(true)}
+          className="quiz-results-button focus-ring fixed bottom-24 right-4 z-50 inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-5 font-semibold shadow-2xl transition hover:scale-[1.02] md:bottom-6 md:right-6"
+        >
+          <BarChart3 size={17} />
+          Résultats
+        </button>
+      ) : null}
 
       {showFinishConfirm ? (
         <div className="fixed inset-0 z-[70] grid place-items-center bg-black/70 px-4 backdrop-blur-md">
