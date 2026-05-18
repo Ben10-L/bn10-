@@ -2,24 +2,30 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, RotateCcw } from "lucide-react";
+import { ArrowLeft, ArrowRight, BarChart3, RotateCcw, X } from "lucide-react";
 import { QuizSet } from "@/lib/data";
 import { useQuizStore } from "@/store/useQuizStore";
 
 export function QuizExperience({ quiz }: { quiz: QuizSet }) {
   const { currentIndex, answers, selectAnswer, next, previous, reset } = useQuizStore();
   const [elapsedSeconds, setElapsedSeconds] = useState(0);
+  const [finishedEarly, setFinishedEarly] = useState(false);
+  const [showFinishConfirm, setShowFinishConfirm] = useState(false);
   const resultSoundPlayedRef = useRef(false);
   const questions = quiz.bankQuestions;
-  const completed = currentIndex >= questions.length;
+  const completed = finishedEarly || currentIndex >= questions.length;
   const question = questions[Math.min(currentIndex, Math.max(questions.length - 1, 0))];
   const questionId = question ? `${quiz.slug}-${question.number}` : "";
-  const progress = questions.length === 0 ? 0 : completed ? 100 : ((currentIndex + 1) / questions.length) * 100;
+  const quizAnswers = useMemo(() => answers.filter((item) => item.questionId.startsWith(`${quiz.slug}-`)), [answers, quiz.slug]);
+  const answeredQuestionIds = useMemo(() => new Set(quizAnswers.map((item) => item.questionId)), [quizAnswers]);
+  const progress = questions.length === 0 ? 0 : finishedEarly ? (quizAnswers.length / questions.length) * 100 : completed ? 100 : ((currentIndex + 1) / questions.length) * 100;
   const selected = answers.find((item) => item.questionId === questionId);
   const canContinue = Boolean(selected);
 
   useEffect(() => {
     setElapsedSeconds(0);
+    setFinishedEarly(false);
+    setShowFinishConfirm(false);
     resultSoundPlayedRef.current = false;
     reset();
   }, [quiz.slug, reset]);
@@ -36,11 +42,24 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
     return () => window.clearInterval(timer);
   }, [completed, quiz.slug]);
 
-  const quizAnswers = useMemo(() => answers.filter((item) => item.questionId.startsWith(`${quiz.slug}-`)), [answers, quiz.slug]);
   const score = useMemo(() => quizAnswers.filter((item) => item.correct).length, [quizAnswers]);
-  const resultLabel = `${score}/${questions.length}`;
-  const scorePercent = questions.length === 0 ? 0 : Math.round((score / questions.length) * 100);
+  const scoreBase = finishedEarly ? quizAnswers.length : questions.length;
+  const resultLabel = `${score}/${scoreBase}`;
+  const scorePercent = scoreBase === 0 ? 0 : Math.round((score / scoreBase) * 100);
+  const resultQuestions = finishedEarly ? questions.filter((item) => answeredQuestionIds.has(`${quiz.slug}-${item.number}`)) : questions;
   const elapsedLabel = formatTime(elapsedSeconds);
+
+  function restartQuiz() {
+    setFinishedEarly(false);
+    setShowFinishConfirm(false);
+    resultSoundPlayedRef.current = false;
+    reset();
+  }
+
+  function finishNow() {
+    setShowFinishConfirm(false);
+    setFinishedEarly(true);
+  }
 
   useEffect(() => {
     if (!completed || resultSoundPlayedRef.current || questions.length === 0 || typeof window === "undefined") {
@@ -87,12 +106,21 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
               <h1 className="mt-2 font-display text-2xl font-semibold">{quiz.title}</h1>
               <p className="mt-2 text-sm text-gray-400">{quiz.topic} · {quiz.questions} questions</p>
               <div className="mt-5 grid grid-cols-2 gap-3">
-                <Metric label={completed ? "Score" : "Répondu"} value={completed ? `${score}/${questions.length}` : `${quizAnswers.length}/${questions.length}`} />
+                <Metric label={completed ? "Score" : "Répondu"} value={completed ? resultLabel : `${quizAnswers.length}/${questions.length}`} />
                 <Metric label="Questions" value={`${questions.length}`} />
               </div>
               <div className="mt-3">
                 <Metric label="Chrono" value={elapsedLabel} />
               </div>
+              {!completed ? (
+                <button
+                  onClick={() => setShowFinishConfirm(true)}
+                  className="focus-ring mt-4 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full border border-red-500/35 bg-red-500/[0.08] px-4 font-semibold text-red-100 transition hover:border-red-400/70 hover:bg-red-500/[0.14]"
+                >
+                  <BarChart3 size={16} />
+                  Résultats
+                </button>
+              ) : null}
             </div>
           </div>
         </aside>
@@ -100,7 +128,18 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
         <div>
           <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
             <div className="nothing-chip rounded-full px-4 py-2 text-sm">{quiz.title}</div>
-            <div className="nothing-chip rounded-full px-4 py-2 font-mono text-sm">Chrono {elapsedLabel}</div>
+            <div className="flex flex-wrap items-center gap-2">
+              <div className="nothing-chip rounded-full px-4 py-2 font-mono text-sm">Chrono {elapsedLabel}</div>
+              {!completed ? (
+                <button
+                  onClick={() => setShowFinishConfirm(true)}
+                  className="focus-ring inline-flex min-h-10 items-center justify-center gap-2 rounded-full border border-red-500/35 bg-red-500/[0.08] px-4 text-sm font-semibold text-red-100 transition hover:border-red-400/70 hover:bg-red-500/[0.14]"
+                >
+                  <BarChart3 size={16} />
+                  Résultats
+                </button>
+              ) : null}
+            </div>
           </div>
 
           <div className="nothing-panel relative overflow-hidden rounded-[1.35rem] p-4 sm:p-6 lg:p-8">
@@ -110,22 +149,33 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
 
             {completed ? (
               <div className="animate-reveal">
-                <p className="dot-title text-sm text-red-400">Score final</p>
+                <p className="dot-title text-sm text-red-400">{finishedEarly ? "Résultats instantanés" : "Score final"}</p>
                 <div className="mt-5 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                   <div>
                     <h2 className="dot-title text-6xl font-semibold leading-none sm:text-8xl">{resultLabel}</h2>
                     <p className="mt-3 max-w-2xl text-gray-300">
-                      Correction complète pour {quiz.title}. Temps total: {elapsedLabel}.
+                      {finishedEarly ? "Quiz arrêté. Les questions non répondues sont ignorées dans ce score." : `Correction complète pour ${quiz.title}.`} Temps total: {elapsedLabel}.
                     </p>
                   </div>
-                  <button onClick={reset} className="neon-border focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-black px-5 font-semibold transition hover:scale-[1.02]">
+                  <button onClick={restartQuiz} className="neon-border focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-black px-5 font-semibold transition hover:scale-[1.02]">
                     <RotateCcw size={17} />
                     Refaire le quiz
                   </button>
                 </div>
 
+                <div className="mt-6 grid gap-3 sm:grid-cols-3">
+                  <Metric label="Correctes" value={`${score}`} />
+                  <Metric label="Répondues" value={`${quizAnswers.length}/${questions.length}`} />
+                  <Metric label="Pourcentage" value={`${scorePercent}%`} />
+                </div>
+
                 <div className="mt-8 space-y-3">
-                  {questions.map((item) => {
+                  {resultQuestions.length === 0 ? (
+                    <div className="rounded-[1rem] border border-white/15 bg-black/30 p-5 text-gray-300">
+                      Aucune question répondue pour le moment.
+                    </div>
+                  ) : null}
+                  {resultQuestions.map((item) => {
                     const id = `${quiz.slug}-${item.number}`;
                     const answer = answers.find((entry) => entry.questionId === id);
                     const isCorrect = answer?.correct === true;
@@ -199,7 +249,7 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
 
             {!completed ? (
               <div className="mt-8 flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
-                <button onClick={reset} className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/15 px-4 text-gray-300 transition hover:border-red-500/45 hover:text-white">
+                <button onClick={restartQuiz} className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/15 px-4 text-gray-300 transition hover:border-red-500/45 hover:text-white">
                   <RotateCcw size={17} />
                   Recommencer
                 </button>
@@ -220,6 +270,50 @@ export function QuizExperience({ quiz }: { quiz: QuizSet }) {
           </div>
         </div>
       </div>
+
+      {showFinishConfirm ? (
+        <div className="fixed inset-0 z-[70] grid place-items-center bg-black/70 px-4 backdrop-blur-md">
+          <div className="nothing-panel w-full max-w-md animate-reveal rounded-[1.25rem] p-5 shadow-2xl">
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <p className="dot-title text-xs text-red-400">Voir les résultats</p>
+                <h2 className="mt-2 font-display text-2xl font-semibold text-white">Terminer le quiz ?</h2>
+              </div>
+              <button
+                onClick={() => setShowFinishConfirm(false)}
+                className="focus-ring grid h-10 w-10 shrink-0 place-items-center rounded-full border border-white/15 text-gray-300 transition hover:border-white/35 hover:text-white"
+                aria-label="Annuler"
+                title="Annuler"
+              >
+                <X size={17} />
+              </button>
+            </div>
+            <p className="mt-4 text-sm leading-6 text-gray-300">
+              Are you sure you want to finish the quiz and see your results?
+            </p>
+            <div className="mt-5 grid grid-cols-3 gap-3">
+              <Metric label="Correctes" value={`${score}`} />
+              <Metric label="Répondues" value={`${quizAnswers.length}`} />
+              <Metric label="Progression" value={`${Math.round(progress)}%`} />
+            </div>
+            <div className="mt-6 flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
+              <button
+                onClick={() => setShowFinishConfirm(false)}
+                className="focus-ring inline-flex min-h-12 items-center justify-center rounded-full border border-white/15 px-5 font-semibold text-gray-300 transition hover:border-white/35 hover:text-white"
+              >
+                Resume Quiz
+              </button>
+              <button
+                onClick={finishNow}
+                className="neon-border focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-black px-5 font-semibold text-white transition hover:scale-[1.02]"
+              >
+                <BarChart3 size={17} />
+                See Results
+              </button>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </section>
   );
 }
