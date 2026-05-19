@@ -4801,7 +4801,7 @@ export const quizSections = [
               "Texte uniquement",
               "Images uniquement",
               "Plusieurs types de données",
-              "Seulement des nombres Questions concernant RN base sur et le site web uniquement Questions 1 à 25 — Niveau simple"
+              "Seulement des nombres"
             ],
             "answer": 2,
             "explanation": "Réponse correcte: Plusieurs types de données"
