@@ -5101,7 +5101,7 @@ export const quizSections = [
               "Des fonctions linéaires uniquement",
               "Une seule couche",
               "Plusieurs couches de neurones",
-              "Aucun poids Questions 26 à 60 — Niveau moyen"
+              "Aucun poids"
             ],
             "answer": 2,
             "explanation": "Réponse correcte: Plusieurs couches de neurones"
